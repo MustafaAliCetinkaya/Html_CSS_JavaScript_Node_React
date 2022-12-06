@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mustafa Ali Çetinkaya</title>
+</head>
+<body>
+<canvas id="tuval" width="1280" height="960" style="border: 3px solid;">
+	<script type="text/javascript">
+		var tuval=document.getElementById("tuval");
+		var cizim=tuval.getContext("2d");
+
+		cizim.beginPath();
+
+
+
+		cizim.moveTo(0,0);
+		cizim.lineTo(450,500);
+		cizim.lineTo(450,800);
+
+		cizim.moveTo(300,200);
+		cizim.arc(300,200,50,0,2*Math.PI);
+
+		cizim.font="40px Arial";
+		cizim.fillText("Mustafa Ali Çetinkaya", 700,500);
+
+		cizim.moveTo(700,0);
+		cizim.lineTo(450,900);
+		cizim.lineTo(850,900);
+
+		cizim.moveTo(1200,960);
+		cizim.arc(1200,960,300,0,2*Math.PI);
+		cizim.arc(1200,960,200,0,2*Math.PI);
+		cizim.arc(1200,960,100,0,2*Math.PI);
+		cizim.stroke();
+
+
+
+	</script>
+</canvas>
+</body>
+</html>
