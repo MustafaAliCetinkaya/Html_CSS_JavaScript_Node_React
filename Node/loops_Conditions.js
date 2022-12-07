@@ -22,15 +22,15 @@ while (x > 1) {
     x /= 10;
 }
 console.log('-------------------');
-const words = 'already, cydeo, java, apple';
-/*for (var i = 0; i < words.length; i++) {
+const words = ['already', 'cydeo', 'java', 'apple','java'];
+for (i = 0; i < words.length; i++) {
 	var count=0;
-for (var j = 0; j < words.length; j++) {
-if(words.charAt[i]==words.charAt[j])
+for ( j = 0; j < words.length; j++) {
+if(words.at(i)===words.at(j))
 count++;
 }
-if (count>3) {
-	console.log(words.charAt[i]);
+if (count>1) {
+	console.log(words.at(i));
 }
 
-}*/
+}
