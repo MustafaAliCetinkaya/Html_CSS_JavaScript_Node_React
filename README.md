@@ -5,7 +5,7 @@ Html/CSS/Node.js/JavaScript
 
 - 🔭 I’m Software Development Engineer in Test (SDET)
 - 🌱 I’m currently working on QA Automation
-- 💬 Ask me about Java, Lambda, HTML, CSS, SQL, Selenium, Junit, TestNg, Cucumber, API, STLC
+- 💬 Ask me about Java, HTML, CSS, SQL, Selenium, Junit, TestNg, Cucumber, API, SDLC, STLC, Agile
 - 📫 How to reach me: macetinkaya.03@gmail.com
 - ⚡ Fun fact: Learning always new because new is always better, traveling to new places.
 
