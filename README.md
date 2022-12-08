@@ -7,7 +7,7 @@ Html/CSS/Node.js/JavaScript
 - 🌱 I’m currently working on QA Automation
 - 💬 Ask me about Java, HTML, CSS, SQL, Selenium, Junit, TestNg, Cucumber, API, SDLC, STLC, Agile
 - 📫 How to reach me: macetinkaya.03@gmail.com
-- ⚡ Fun fact: Learning always new because new is always better, traveling to new places.
+- ⚡ Fun fact: Learning always new things. Because new is always better!
 
 [![linkedin](https://img.shields.io/badge/Linkedin-000000?style=for-the-badge&logo=Linkedin&logoColor=white)](https://linkedin.com/in/mustafa-çetinkaya-b61741216)
 
