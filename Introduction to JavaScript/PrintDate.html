@@ -1,0 +1,33 @@
+<!-- HTML + JavaScript kullanılmıştır -->
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<p>Lütfen günü giriniz:</p>
+<input id="gün" type="number">
+
+    <p>Lütfen ayı giriniz:</p>
+    <input id="ay" type="number">
+
+        <p>Lütfen yılı giriniz:</p>
+        <input id="yıl" type="number">
+            <br><br>
+                <button onclick="TarihiYaz()">Tarihi ver!</button>
+
+
+                <script>
+
+                    function TarihiYaz() {
+                        var gün, ay, yıl;
+                        gün = document.getElementById('gün').value
+                        ay = document.getElementById('ay').value
+                        yıl = document.getElementById('yıl').value
+                        document.write("Gün, ay, yıl: " + gün + "." + ay + "." + yıl + "<br>");
+                        document.write("Ay, gün, yıl: " + ay + "." + gün + "." + yıl + "<br>");
+                        document.write("Yıl, ay, gün: " + yıl + "." + ay + "." + gün + "<br>");
+                    }
+                </script>
+
+
+</html>
+
+
