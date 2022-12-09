@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>For loops</title>
+</head>
+<body>
+<script>
+  for (var i = 0; i < 10; i++) {
+    document.write(i);
+    document.write("<br>");//New line
+  }
+  for (var i = 0; i <= 10; i++) {
+    document.write(i+2);
+    document.write("<hr>");//Draw line
+  }
+  var sum=0;
+  for (var i = 100; i >= 90; i--) {
+    document.write(i);
+    document.write("<br>");
+    sum+=i;
+  }
+  document.write("Sum of the numbers between 100 and 90 (included the limit values)"+sum);
+</script>
+</body>
+</html>
