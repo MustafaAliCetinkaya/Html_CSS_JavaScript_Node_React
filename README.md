@@ -1,4 +1,6 @@
-# Html/CSS/Node.js/JavaScript [![linkedin](https://img.shields.io/badge/Linkedin-000000?style=for-the-badge&logo=Linkedin&logoColor=white)](https://linkedin.com/in/mustafa-çetinkaya-b61741216)
+[![linkedin](https://img.shields.io/badge/Linkedin-000000?style=for-the-badge&logo=Linkedin&logoColor=white)](https://linkedin.com/in/mustafa-çetinkaya-b61741216)
+
+# Html/CSS/Node.js/JavaScript 
 
 ### Software testing is not just about learning testing. It is about the learning process of software development. 
 
