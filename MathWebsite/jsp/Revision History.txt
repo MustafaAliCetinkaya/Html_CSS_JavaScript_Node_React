@@ -1,0 +1,573 @@
+/*
+
+	JavaSketchpad
+	N. Jackiw
+	Copyright © KCP Technologies, Inc.
+	All Rights Reserved
+	
+	Revision History
+	================
+	TO DO: Build.java -- remove Build.java alpha notices
+	
+	3/17/10		-rnj
+				Implemented Path interface for SamplerCurves, 
+				and wrote PointOnSamplerCurveAnim, so we can animate along them, fixing
+				BZ68. JSP: Animate point on Point Locus or Function Plot produces java exception.
+	
+	
+	*** 11/2009	RELEASE AS JSP 5.00 coordinating with GSP 5.00
+	
+	9/9/08		-rnj
+				Removed support for provisional 'Derivative' command (introduced
+				in <g2> 5/1/05), since its format (identical to 'Function') is
+				inappropriate for the imagined-future-JSP that can automatically
+				re-differentiate symbolic derivatives from the functions that they
+				differentiate.
+	
+	7/31/08		- rnj
+				Added support for 
+				
+				dashed, dotted, solid - line styles
+				
+				Separately, consolidated various redundant isHit implementations
+				from Draggable gPoint subclasses into the superclass.
+				
+	7/24/08		- rnj
+				Added support for
+				
+				hairline, thin, mediumLine, thick(*) - line styles
+				dot, small, mediumPoint, large - point styles
+				
+				"medium" style, which sets both mediumLine and mediumPoint styles
+				
+				(*) Since "thick" had different semantics under g1, "thick"
+				is only interpreted as "thicker than mediumLine" if your applet
+				specifies MinGrammarVersion=2 (or higher) as a parameter.
+				
+	
+	7/11/08		- rnj
+				Added (requests for) anti-aliasing to graphics contexts, leading to improved
+				appearance in most browsers. Also began switch to Graphics2D, for better
+				rendering appearance. Done so far: points, straights, circles, point loci,
+				straight loci. 
+	
+	6/22/05		- mrj & rm
+				Renamed output to "jsp5_dev.jar", and abandoned class-folder output. By retargetting
+				GSP export to a new applet name, we prevent v2-grammar HTML files from inadvertently
+				being used with v1 (jsp4.jar) applets. From v2 (and jsp5.jar) and later, we have a new
+				mechanism for protecting future growth (MinGrammarVersion, see 2/01/03). The "_dev" is
+				simply to indicate that v2 is currently in development and should be sandboxed; once
+				V2 is believed final we will switch to jsp5.jar (before release of GSP5).
+	
+	6/21/05		- rnj
+				Implemented <g2> PlotFixedXY(coordSys, xCoordConstant, yCoordConstant); [TT#3043].
+	
+	5/1/05		- mrj
+				At Matt's suggestion, including in <g2> "Derivative". It has the same grammar as a Function
+				("Derivative(xcor, ycor, prefix string, calculation string)(parents);"), and is mapped by Sketch.java
+				to a Function object. This is for possible future extensions, e.g. if we ever make Functions
+				editable in JavaSketchpad, Derivative will need to be marked as different than Function on export.
+	
+	12/10/04	- mrj
+				More work on a <g2> grammar for TT#2920. Function Plots are now implemented.
+				Grammar: FunctionPlot(function, coord sys, number of samples, domain start, domain end, projection)
+				where projection can be 0 (y = f(x)), 1 (x = f(y)), 2 (r = f(theta)), or 3 (theta = f(r)).
+				Example: FunctionPlot(37,6,200,-10,10,0);
+				
+				Additionally, "Point on object(objRef, number)" can now have either a FunctionPlot or a PointLocus
+				as its parent. In either case, the number argument specifies the relative location of the 
+				point along the parent -- the decimal fraction of the way through the parental domain that the 
+				point should be located.
+				
+				Added testfile.html and adjusted build configuration (.xcode file) so that interactive
+				debugging is possible. Replace the construction parameter (and only the construction 
+				parameter) of the testfile.html applet to run a certain construction under 
+				the debugger.
+				
+				Clicking on the About box now includes the URL of the applet appended to the URL
+				of the page to open.
+	
+	10/25/04 - mrj
+				Builds under XCode, and project has been divided such that every class is in
+				a separate file. Also, new file build.java: the build number and relevant
+				strings are now in their own file, rather than class variables of Sketch.java. [TT#2914]
+				
+				Functions are now implemented, with a <g2> grammar [1st half of TT#2920].
+				Grammar: Function(xcor, ycor, prefix string, calculation string)(parents);
+				In the calculation string of a Function, use 'x' for all occurances of the 
+				independent variable.
+				Use: Calculate(xcor, ycor, prefix string, calculation string)(parents);
+				Changed calculation string: now accepts user-defined functions: @f{A-Z}.
+				Example: Calculate(15, 15, 'f(3) = ', '3 @fA')(2); //2 is a Function
+				Also, calculation strings are now allowed to have an empty parent list.
+	
+	10/6/04 - mrj
+				New feature for build 0652 and later: the applet's build number is displayed
+				in the lower left hand corner. Use the applet-wide parameter "ShowBuildNumber"
+				to specify: 0 or no parameter means no build number shown, 1 means build
+				number displayed. [TT#2906]
+	
+	8/17/04 - rnj
+				Rewrote Move buttons to avoid reliance on a fixed movement vector that could
+				become obsolete under changing geometry. New API (an extension of Draggable
+				interface) is amenable for path-specific subclassing if we want to eventually
+				add GSP4-style path-navigation intelligence.
+				
+				Refactored FreePoint and DriverPoint to share a common base class, MouseFreePoint
+				primarily for code sharing.
+				
+	
+	8/11/04 - MRJ		
+				
+				Implemented angle bisector and defined <g2> grammar for it [TT#2616].
+				
+				Defined a new parameter, <PARAM NAME=PixelsPerLengthUnit VALUE={integer}>, which 
+				indicates the scaling factor to use in showing measurements as approximately in 
+				inches or centimeters rather than always in pixels. Eventually this will be
+				exported from GSP's Advanced Preferences | System | Screen Resolution field; for now,
+				it needs to be hand specified [TT#2593]. This should be documented in <g2>, but is
+				grammar-neutral in the sense that <g1>-JSP won't crash if there's an applet PARAM
+				it doesn't recognize. 
+				
+				Implemented the ability to decide, either on a sketch level with a parameter, or on a
+				measurement or calculation level with an argument (or both), how many digits of precision
+				past the decimal point should be displayed [TT#2862]. Document in <g2> but note that
+				<g1> won't crash.
+				
+				Implemented and defined <g2> grammar for ToggleVisibilityButtons, which can both show and
+				hide objects (and change their labels accordingly) [TT#2125]. 
+				
+				Added a build number, which should be kept in sync with the desktop Sketchpad build number.
+	
+	
+	DO Fix JSP export of dimensioned constants!  What's wrong with TinLissy, for instance--it spits out 360 deg, when we really want 2Pi radians. Or is it that our plotted rotations should be interpreting their args in degrees (more likely)?
+	ADD TextColor attribute?
+	
+	2/01/03		Implemented colorization as a type of Transformer, and convinced loci to archive
+				colors of individual samples if their traceGObj was colorized. Defined grammar <in g2>
+				and constructions for Spectrum and Intensity univariate colorations and RGB and HSV 
+				trivariate colorations, corresponding to GSP 4.0's color options.  
+				
+				Fixed a problem in which intersections of lines could behave extremely poorly,
+				numerically, when the second of the two lines was near vertical. [TT#2557]
+				
+				Defined a new parameter, <PARAM NAME=MinGrammarVersion VALUE={integer}>, which indicates
+				the MINIMUM version of the JSP grammar that legally describes the contents of an
+				CONSTRUCTION parameter. This in turn implies the minimum version of the JSP applet
+				capable of parsing that CONSTRUCTION. Added code at Sketch startup that verifies
+				the present applet understands a grammar at least equal to the MinGrammarVersion.
+				If not, the applet refuses to parse the construction (which would error, since we
+				don't understand its grammar), and instead displays an applet-window error message.
+				The contents of this error message can be specified in the HTML file itself as
+				the value of a new parameter (NAME=GrammarVersionError); if that parameter is not
+				present, a generic error ("You must update this JSP &c.") is used instead.
+				
+				Rewrote Sketch class parser error handler to throw exceptions containing human-readable
+				error messages rather than to print errors to System.console. Modified GSP applet
+				to field thrown errors from sketch and display them directly in the applet window.
+	
+	11/08/02	Extended gCircle:CircleCenterAndRadius:Constrain() to recognize that parent2
+				(the radius specifier) may be a (length) Value rather than a Segment. This
+				fixes TT#2480. 
+	
+	10/28/02	Replaced GObject.descendsFrom() implementation with one which limits recursion both for
+				negative and positive searches, rather than for negative searches only.  This dramatically
+				increases the effectiveness of this search when looking for ancestors of children located deep in
+				the object list but with relatively few ancestors. [TT#2492]
+				
+				Revised version# printed to console command line at applet launch.
+	
+	[released as 4.00 with no official grammar version number but, informally, grammar#1 <g1>]
+	
+	6/11/01		mdl - added CoordSysByAxes, RectangularUnitPoint
+	
+				UnitPoint now an abstract base class of SimpleUnitPoint (old unit point), and
+				RectangularUnitPoint (new). Unit points, Axis now support getUnitLengthX() and
+				getUnitLengthY() methods for rectangular axes support.
+	
+	6/11/01		rnj & ml - fixed problem where dragged unit points snapped back to their
+				original scale when dragging their origin. Also defined better UnitPoint()
+				semantics, and changed "Axis" to "Axis3" for backsupporting GSP/3 sketches
+				[UPDATE GRAMMAR!] and introduced "Axis4," which is defined rather than
+				by a coordSys (Axis3), instead by an origin and unit point (as per GSP4).
+				Also added "SquareUnitPoint," expecting coordSysByAxes and RectangularUnitPoint()
+				to follow.
+				
+	
+	6/9/01		rnj - Revised copyright notice to 2001, and switched release to JSPDR3.5++ as
+				we anticipate frequent development up until release of GSP/4.00 (at which point we
+				should rev the applet to JSP_R400, or some such).
+	
+	11/1/00		Released as JSPDR3.5, locally only, because the Converter has not yet been updated.
+	
+	10/4/00		Added
+					Rotate/MeasuredAngle(preimage, center, measuredAngle);
+					
+	7/3/00		Added
+					ConcatText(x, y)(t1, t2, ..., tn);
+					
+					which concatenates text objects t1..tn and places them at (x, y).
+					
+	6/19/00		Added
+					bold
+					italic
+					plain
+					size(xx)
+					font('yy')
+				
+				formatting tags, which apply to any text object. These override the
+				default font for said text objects. Thus "plain" should appear as the
+				first format to override a default. For instance, if actionFont is
+				ITALIC, and you want it to be BOLD NON-ITALIC, use [plain, bold] for
+				the format specifier. The [plain] overrides the ITALIC of the default
+				actionFont; the [bold] then re-adds bold formatting to the specifier.
+	
+				Added
+					justifyRight
+					justifyLeft
+					justifyCenter
+					
+				formatting tags, which apply to any text object.
+				
+				Added
+					PegText(pointParent, textParent);
+				
+				which creates a copy of textParent whose fundamental position (pre-justification)
+				is located at pointParent's coordinates.
+				
+				Added
+					FixedText(x, y, message);
+					
+				which creates text which does not change at x, y (pre-justification). 
+				
+	6/16/00		Added
+					SimultaneousButton(x, y, title)(but1, but2, ..., butn);
+					
+				which causes but1 - butn button parents to be pressed simultaneously.
+				
+				Added [image('url')] formatting attribute to buttons. Specifying
+				an (optional) image causes the button's appearance to be dictated
+				by the image, rather than by its string name.
+				
+	11/20/99	Sent to ESCOT as 3.4 for Chris DiGiano's wandering llama.
+	
+	11/20/99	Added support for points on polygons (use Point on object(xxx, offset)) where
+				xxx = thePolygon and offset = originalVertex + edgeLength.
+				
+				Added support for "layer(x)" formatting tag, which allows you to manually
+				control the drawing order of objects within their layer. Use positive numbers,
+				where higher values appear on top of lower values. Values don't have to be
+				consecutive, but if you specify values greater than 1000, you may move into
+				the next higher layer of objects.
+	
+	11/19/99	Added
+					ImageOnPoint(point, imageURL);
+					ImageBetweenPoints(point, imageURL);
+
+	7/16/99		Factored event handling out of the core Sketch() class, which now implements event-model
+				neutral event handlers and derives from a caller-provided class, SketchpadRuntimePanel,
+				that implements the caller's preferred event handler (forwarding received events on to
+				the Sketch()'s model-neutral handlers).
+				
+	7/9/99		Added support for DiagnosticLevel parameter, which controls statusLine and debugging info.
+				Switched back to 1.1 event model for escot beans.
+				Added a new target, SketchpadBase.jar, for distributing inner classes under ESCOT volunteer license.
+	
+	3/26/99		Posted to site for controlling the SRC applets, but did not bundle as
+			    a newly-available download. I believe I fixed some of MRJ 2.1's inconsistencies
+			    by turning system.out.println()'s into system.out.print(...+"\r\n")'s, but
+			    I still get stray "verifyErrors" at runtime on arbitrary classes which have not
+			    been touched since working fine. Currently, Axis() always fails---try nucalc.html.
+			    Goal is to wait until Pro5 ships, and see if it's finalized Java tools fix my problems.
+	
+	3/9/99		Fixed problem where applet failed to redraw properly on startup
+				Avoided deadlock if sketch.paint() threw
+	
+	11/9/98		Fixed FixedAngleMarkedDistance, MeasuredAngleFixDistance, MarkedAngleMarkedDistance, for correct vertical displacements.
+	
+	
+	RELEASED DR3 - End of June 1998
+	
+	6/18/98		Reverted to Java 1.0 Event Model for Netscape 4.0/Mac compatibility---damn them!
+				Shortened a few classnames so it works on a Mac (with limited filename lengths) with browsers
+				that don't understand ARCHIVEs---damn them!
+	
+	6/15/98		Improved speed of sketches containing multiple loci tremendously.
+	
+	6/8/98		Implemented Dilation/MarkedRatio
+	
+				Added DriverPoint(measureX, measureY, initialX, initialY);
+	
+	6/2/98		Added a JSP_ExternIO getExternIOItemList() method, which returns a list of the
+				GObjects in a sketch that can be directly addressed by a given JSP_ExternIO
+				interprocess communication protocol.
+				
+				Added Parameter measurements which can be set by external callers.
+	
+	5/24/98		Implemented loci of gStraights
+	
+	5/23/98		Fixed a bug that caused some versions of Internet Explorer to crash on a
+				bad cast while loading sketches. Specifically, old code used the same
+				routine to read ints as doubles from the paramLine, and some grammar-spec
+				parentIndices, when moved from char to double to int, experienced sufficient
+				precision loss to wind up referencing the wrong parent!
+	
+	4/17/98		Made analytically-specified vastly more efficient by suppressing updates in 
+				measurement text during locus resampling.
+				
+				Implemented Dilation/SegmentRatio
+	
+	4/16/98		Updated to new (Java 1.1) awt event model
+	
+				Changed # of significant digits on displayed measurements from max to 3.
+	
+	4/14/98		Added separate Bean development project as a target of the master JavaSketchpad.µ
+				Codewarrior project. Removed "applet wrapper" from Bean, and replaced former Applet
+				services to the Sketch (which were stubbed out at the Bean level) with a separate,
+				JavaSketchpad-specific interface, SketchpadRuntimeServices, which allows a Sketch
+				object to be embedded in an arbitrary runtime context.
+	
+	2/11/98		Implemented Translation/MarkedAngle/MarkedDistance 
+				Implemented Translation/MarkedAngle/FixedDistance
+	
+	2/10/98		Added PolarTranslation to the grammar (was implemented but undocumented in DR2).
+				Fixed grammar for Perpendicular, Parallel, Intersect1, Intersect2, and Ray, all
+				of which had reversed parameter lists.
+				
+				Fixed reversal of coordinate system ("up" corresponded to negative values for y)
+	
+	2/10/98 rnj Added IAC support (JSP_ExternIO) and developed some sample remote applets that
+			    communicate with current code (DR2.2a).
+
+	2/6/98 rnj	Posted JSP DR2.1, containing below fix (for AMTE JavaSketchpad workshop)
+			    as well as Scott's latest WinExporter, which fixed a WinNT error message
+			    about missing .DLLs.
+	
+	1/29/98 rnj	Updated to Codewarrior Pro 2.1, Java 1.1.
+				
+				Implemented transformed circle interiors. This now eliminates the bug
+				in which images of circle interiors were circles.
+			
+		
+	----------DR2 RELEASE: 9/20/97---------
+
+	9/20/97	rnj	- Changed about box to point to jsp_about.html.
+	
+	9/17/97 rnj	- Added 'r'/'R' as a synonym for reset
+
+				  Fixed a bug in which the about box button text was not always displayed in
+				  a consistent font.
+				  
+				  Added support for a space token delimiter in compoundExprs, allowing
+				  '1 3 +' to be interpreted as 'one plus three' instead of as 'thirteen plus'.
+				  
+				  Added support for converting double apostrophes ('') into single 
+				  apostrophes when they're embedded in apostrophe-delimited strings
+				
+	9/10/97	rnj	- Reversed the interpretation of movement pairs (they're now dest, source) for 
+				  compatibility with desktop Sketch format.
+				  
+				  Eliminated bug in which traced points traced their label as well.
+				  
+				  Fixed a bug in which loci's initial appearance (first frame) was incorrect.
+				  
+				  Added X+Y axis objects (KLOOGE: still needs custom DrawVisible() routine)
+				  
+				  Added Unit Points.
+	
+	9/9/97	rnj	- Added tan() func to compound measurements for desktop-compatibility,
+				  and restructured things so there's a single equFormComponent space
+				  instead of a separate one for each derived multimeasure. This allows
+				  easier conversion from desktop Sketchpad (in which there is only
+				  one enumeration of all equFormComponents).
+				  
+				  Added PlotXY() primitive.
+	
+	9/8/97	rnj	- Added initial loci, with circle & segment paths.
+	
+	9/5/97	rnj	- Added Ratio/Points to Measurements.
+				  Added tracing.
+				  Added "DirectedAngles" parameter, default 1, to control signage of angles.
+	
+	9/4/97	rnj	- Defined coordinate systems (and Origin/Unit + UnitCircle specs), with
+				  thick or thin grids, defined multimeasure framework and
+				  simple (x, y) coordinate measurements.
+				- Added support for Translation/FixedAngle/MarkedDistance
+				
+	9/3/97	rnj	- Deferred graphics initialization until the applet is known to be
+				  initialized (i. e. in start() context instead of during init()). This
+				  fixes some problems evident in Internet Explorer 3.0/Win.
+				- Added radius, circumference, perimeter, ratio/segments, area, slope,
+				  and distance measurements.
+				- Put into place basic framework for calculations (parse + evaluator).
+				  Current grammar requires expression compilation (into RPN) to be
+				  performed by the user, rather than the applet, but supports the
+				  arithmetic + predef functions of desktop JSP--the only compatibility
+				  lacking is for equFormComponent-extraction, which has to wait until
+				  we have multimeasures.
+				
+	9/2/97	rnj	- Added a status display to the applet during parseGObjs().
+				- Turned off animating threads when the applet is stopped, requeued them when
+				  restarted. The implementation here incidentally removes the restriction on
+				  5 auto-start action buttons: the sky's the limit, now!
+				- Implemented a simple "about box" paradigm: hitting '?' when the applet is
+				  active launches the jsp home page, or clicking in the lower-right corner.
+	
+				  
+	9/1/97	rnj - FIRST E-MAIL NOTICE OF INTERNAL RELEASE DESCRIBED WORK TO DATE:
+	
+				- Removed mouse-dragging from yesterday's automatic updater to increase
+				  responsiveness to drags. The trick is to use Paint() instead of Repaint()
+				  if you have to redraw the screen during multi-threading, because the awt's
+				  screen update thread (which repaint() tickles) is lower-priority than any
+				  sketch-based thread.
+				  
+				- Added support for Label, Action, and Measure family of font parameters (e. g.
+				  LabelFont = "TimesRoman", ActionSize = 12, MeasureBold = 1, MeasureItalic = 0.)
+				  This allows users to override Sketchpad's defaults for text styles.
+				  
+				- Fixed a bug in which changing a sketch's speed zapped "instant" movement buttons.
+				
+				- Added support for BackRed, BackBlue, and BackGreen background color parameters
+				  (range is 0-255 for each; default is (200, 200, 200)).
+				  
+				- Added support for "auto" formatting parameter for action buttons. Up to 5
+				  buttons may have this format in a sketch. Any button with this format will
+				  be automatically "clicked" the moment the applet begins. You can auto-click
+				  a hidden button to cause its action (e. g. an animation) to occur without
+				  presenting the button control to the user (because it's hidden).
+				  
+				- Added basic framework for simple measurements, of which Angle and Length
+				  are implemented. Added a formatting attribute, suffix(str), which sets str as
+				  the (optional) suffix of a measurement. Added an applet parameter, 
+				  MeasureInDegrees, which if 1 will result in measurements being reported in
+				  degrees (default = 0; radians). All angle measurements are currently directed.
+	
+	8/31/97 rnj	- Rewrote drawing and g-object updating to avoid race conditions when multiple
+				  threads are updating both the GObjectList and the screen simultaneously. Now,
+				  the screen updating rate is constant regardless of how many separate threads
+				  are updating the GObjectPool.  Tasks that affect the object pool should call
+				  GObjectsLock()'s mutex lock; tasks that require continuous screen updating
+				  should request it of the sketch (through AddContinuousScreenUpdateProcess)
+				  rather than directly from the AWT (through repaint()).
+				  
+	8/30/97	rnj	- Added generic support for animation buttons, which must be subclassed
+				  for specific paths. Implemented circular paths.
+				  
+				  Added global speed control: < and > slow up and speed down animations and movements.
+				  (Check that this works for movement!)
+				  
+				  Also implement gStraight paths, although currently JSP always assumes animation
+				  on gStraights is animation on the segment between gStraight endpoints. (This is
+				  true, for segments!) 
+	
+	8/29/97	rnj	- Added support for labels, which are always in the same font.
+				  New applet parameters include LabelFont (default: Helvetica), LabelSize (default: 12),
+				  and LabelBold (default 0) and LabelItalic (default 0).
+				  
+				  Labels are specified by a label(xxx) formatting parameter. Currently only point labels
+				  are drawn.
+				  
+				  Added support for movement buttons, which are specified by a compound-constructor as follows
+				  
+				  MoveAction ({numeric1}, {numeric2}, {numeric3}, {string}) ({obj1a, obj1b, obj2a, obj2b ... objNb, objNb)
+				  
+				  The movement button's upper left coordinate is located at ({n1}, {n2}) in the coordinate plane.
+				  The movements limited speed is specified by {numeric3}, in pixels per frame. This is
+				  the speed that the slowest moving point in the action will travel. A speed of zero means that all
+				  moving points should travel to their destinations instantly.
+				  
+				  The movement button's label is specified by {string}.
+				
+				  The secondary argument list contains N pairs of point references (1...N), where N>1.
+				  Each pair of point references (a and b) indicate first the free point to move, and
+				  second, the destination of that free point.
+				  
+				  Added Show and Hide actions. 
+				  
+				  ShowButton ({x}, {y}, {string}) ({obj1}, {obj2}, ... {objN})
+				  
+	8/28/97	rnj	- Rewrote BAP-equivalent to avoid redundant recursions. 
+	
+				- Rewrote string parser to avoid overscanning string contents when parsing construction:
+				  huge speed up!
+				  
+				- Added clipping of intersections between gStraights that weren't both lines.
+	
+	8/27/97	rnj	- Fixed a bug in Rotate/MarkedAngle in which all angles were reversed.
+				  Switched to JAR-archive distribution (n. b. this will require a change
+				  in desktop GSP-exported HTML.)
+	
+	2/14/97	rnj	- Implemented optional custom color format (form: "color(r, g, b)" where
+				  r, g, and b are all ints between 0-255). Here is the note for the
+				  eventual grammar doc:
+
+* BEGIN QUOTE *
+You may also assign an arbitrary color using a format specifier of the form
+
+color({red}, {green}, {blue})
+
+where {red}, {green}, and {blue} are {numericConstants} between 0 and
+255 specifying in total a color within a RGB color cube. Thus
+
+[color(0, 0, 0)]
+
+is a synonym of "[black]", and 
+
+[color(255, 255, 255)]
+
+is a synonym of "[white]".
+* END QUOTE *
+
+				  
+	2/13/97	rnj	- Implemented DILm3R_C. (This is already described in the DR1 grammar,
+				  though it wasn't implemented for the DR1 release.)
+	
+	------ DR1 Release --------
+	
+	2/6/97	rnj - Removed AlphaNotices in favor of simpler console-based alpha notice;
+				  released DR1.
+				  
+	2/3/97	rnj - Implemented ROTm3A_C and DR1 AlphaNotices
+	
+	1/21/97	rnj	- Added support for gImages specified by URL. Syntax is:
+							Image(<x-double>,<y-double>, <url-string>);				
+					e.g.
+							Image (0, 0, 'nickj.gif'); 
+	
+	9/18/96	rnj	- Fixed some bugs affecting rays and parallel lines. 
+	
+				- Implemented basic transformation architecture, and defined
+				  handlers for REFLECT_C, DILfR_C, ROTfA_C, TRANSfXfY_C,
+				  TRANSfAfD_C, and TRANSV_C.
+	
+	9/17/96	rnj	Switched JavaGSPspec parent references from label strings (which are not 
+				inherently unique and which are computational intensive to parse) to an
+				implicitly-indexed numeric reference.
+				
+				- Added comments to JavaGSPspec.
+				- Added linear, line/circle, and circle/circle intersections.
+				- Added CircleByCenter&Radius.
+				
+			
+	9/6/96	rnj	Reduced startup speed by 60% and eliminated bugs related to "shortened"
+				lines and rays when multiple JavaSketches appear in one context (e. g.
+				a web page) with different sized panels.
+	
+	9/5/96	rnj	Implemented points on circles.
+	
+	9/2/96	rnj	Implemented circle interiors, points on gStraights, and parallel
+				and perpendicular line constructors.
+				
+	8/30/96	rnj	Replaced manually-specified DragDependencies with (inefficiently)
+				calculated ones. Most GObjs still only track parents and not
+				children, but after assembling the construction, we percolate up
+				from all GObjs() to their draggable ancestors to statically
+				compute dependency lists for the drag ancestors. Drag.java unit
+				isolates most of this, though Sketch.InitObjects() becomes
+				responsible for making a few calls during sketch startup post-
+				processing.
+				
+	8/27/96	rnj	Completed v1.0 of Least Squares dedicated applet. Archived as
+				"Least Squares 8/27/96" and released internally to DataSpace group.
+*/

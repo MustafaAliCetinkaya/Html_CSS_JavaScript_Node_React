@@ -1,0 +1,29 @@
+Ideas for Java Sketchpad:
+
+PROMISES FOR DR4.X
+
+3/1/02:	Added Eugenio to field test list
+
+		(For Eugenio) Add "Bisector(A, B, C)"
+		
+		Add Kunkel to field test list
+		
+PROMISES FOR DR3: (Michael Rundel e8826247@student.tuwien.ac.at)
+	Nick promised he'd look into adding coordinates-of-cursor to the browser status bar
+	Nick promised he'd look into "lifting the applet" into a separate window
+	
+- Implement abstract GObject.PostDragUpdate(), and define GObject.InstantiateGeometry, which first Constrains()
+and then PostDragUpdates().
+
+TO DO:
+- ParseConstruction: Move all fileOpen stuff into its own class.
+- Implement (default) Info + Reset buttons, w/params to override their presence (and in info's case, content)
+- Peg circle/circle intersections to integer plane (someday)
+- Implement double precision vertices for gPolygon and its subclasses; convert iVertex[] to PRIVATE drawVertex[]
+
+DONE:
+[2/1/2003] Parameter: RequiresApplet=(rev#). {Default=0} If the current rev of the applet is less than this parameter,
+the applet refuses to show any of the sketch, and reverts to the same error state that it
+produces if it encounters a .JSP with unrecognized, non-optional content.
+
+[2/1/2003] ParseConstruction: Implement error catching w/throw.
