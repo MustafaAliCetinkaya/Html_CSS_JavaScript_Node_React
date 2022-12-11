@@ -10,6 +10,8 @@
 
 ![github-contribution-grid-snake](https://user-images.githubusercontent.com/78317220/190580600-edd928b9-0191-4b8a-b1f5-b74fd09a5df4.gif)
 
+![think positively](https://user-images.githubusercontent.com/112425162/206287775-f9560cbb-8d27-49b4-a6fa-f137ba01510c.jpg)
+
 
 
 
