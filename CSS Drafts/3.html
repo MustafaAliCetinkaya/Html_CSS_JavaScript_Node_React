@@ -7,9 +7,47 @@
 </head>
 <body>
 <form>
-	<input type="text" value="İstanbul" id="objeismi" >
-	<label for="objeismi">Enter your city:</label><br>
-<button type="submit">Send</button>
+	<table border="5">
+		<p><h2>Please select your <span style="color: lightseagreen">menu:</span></h2> </p>
+		<br>
+		<tr bgcolor="#adff2f"><b>
+			<th><input type="checkbox" name="foods" value="İskender">İskender</th>
+			<th><input type="checkbox" name="foods" value="Beyti">Beyti</th>
+			<th><input type="checkbox" name="foods" value="Kuzu Kebap">Kuzu Kebap</th>
+			<th><input type="checkbox" name="foods" value="Etli Ekmek">Etli Ekmek</th>
+		</b></tr>
+
+		<tr>
+			<td align="center">70 TL </td>
+			<td align="center">80 TL </td>
+			<td align="center">120 TL </td>
+			<td align="center">100 TL </td>
+		</tr>
+
+		<tr>
+			<td colspan="4" bgcolor="aqua"><b>Seçilen Menüler Toplamı:</b></td>
+		</tr>
+		<tr>
+			<td colspan="4" align="center" bgcolor="#a9a9a9"><em><b>Please select a drink from below list</b></em></td>
+		</tr>
+
+		<tr>
+			<th bgcolor="#9370db"><input type="radio" name="drinks" value="ayran">Yayık Ayran</th>
+			<th bgcolor="#20b2aa"><input type="radio" name="drinks" value="ayran">Şalgam</th>
+			<th bgcolor="#98fb98"><input type="radio" name="drinks" value="ayran">Pepsi</th>
+			<th bgcolor="#00bfff"><input type="radio" name="drinks" value="ayran">Fanta</th>
+		</tr>
+	</table>
+</form>
+
+<br><br>
+<form>
+	<label for="objeismi">
+		<h1>Enter <span style="color: deepskyblue">your</span> city:</h1>
+	</label>
+	<input type="text" value="City Name" id="objeismi" >
+
+<button type="submit" onclick="alert('Thanks for your choice!')">Send</button>
 <button type="clear">Clear</button><br>
 
 <select name="popup">
@@ -17,6 +55,10 @@
 	<option value="option1">2. option</option>
 <option value="option1">3. option</option>
 </select>
+	<br><br><br><br>
+	<span style="color: mediumpurple"><b>Email</b></span>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 	<input type="text" value="Enter your email address" size="28"><br>
+	<b>Password: </b>&nbsp;<input type="password" value="Enter your email password" size="28">
 </form>
+
 </body>
 </html>
