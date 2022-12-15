@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Times Table</title>
+    <title>Multiplication Table</title>
 </head>
-<body bgcolor="#98fb98">
-<table style="border: blueviolet">
+<body>
+<table border="1">
     <script>
-        document.write("<table style=\"color: darkred\" align='center' border='2'>");
-        for (var i = 1; i < 11; i++) {
-            document.write("<tr>");
-            for (var j = 1; j < 11; j++) {
+        document.write("<table border='2'>");
+        for (var i = 1; i <= 30; i++) {
+            document.write("<tr style='background-color: darkseagreen'>");
+            for (var j = 1; j <= 30; j++) {
+                if(i==j){
+                    document.write(
+                        "<td style='background-color: yellow'>"+ (i * j) + "</td>");
+                }
                 document.write(
-                    "<td style='font-size: larger'>" + i+" * "+j+" = " + (i * j) + "</td>");
+                    "<td>"+ (i * j) + "</td>");
             }
             document.write("</tr>");
         }
