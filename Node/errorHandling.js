@@ -8,7 +8,7 @@ function myfunction(request, response) {
     if (request.url == '/') {
         console.log(request);
         response.writeHeader(200, {'Content-Type': 'text-plain'});//sunucuya paket gönderiyoruz
-        var variable = '<html><body><h1>Mali:<br><hr>trial code is in progress</h1></body></html>';
+        var variable = '<html><head><tittle>Local Host<body><h1>Mali:<br><hr>trial code is in progress</h1></body></tittle></head></html>';
         response.write(variable);
 
         var item = "<html><body><h1>"
