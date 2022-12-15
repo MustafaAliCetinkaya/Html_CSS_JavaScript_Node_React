@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+Main Page
+    </title>
+</head>
+<body style="background-color: deepskyblue">
+<table bgcolor="yellow" border="2">
+    <tr>
+        <th>Number</th>
+        <th>Factorial</th>
+    </tr>
+
+        <script>
+            function factorial1(a){
+                var result=1;
+                for (var j = 1; j <=a ; j++) {
+                    result*=j;
+                }
+                return result;
+            }
+
+            function factorial2(a){//recursive
+                if(a==0)
+                return 1;
+
+                return a*factorial2(a-1);
+            }
+
+            for (i = 0; i < 20; i++) {
+                document.write("<tr style=\"color: red\" align='center'>" +
+                    "<td>"+i+"</td>" +
+                    "<td>"+factorial2(i)+"</td>" +
+                    "</tr>");
+            }
+        </script>
+</table>
+</body>
+</html>
