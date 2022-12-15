@@ -1,0 +1,12 @@
+{
+  "user1":{
+    "name": "Ali Cetin",
+    "password": "12hg34l.",
+    "email": "macetinkaya@gmail.com"
+},
+  "user2":{
+    "name": "Etyefan Manik",
+    "password": "A.rt435",
+    "email": "etyefan@gmail.com"
+}
+}
