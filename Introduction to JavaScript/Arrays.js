@@ -26,6 +26,16 @@ console.log(myArray)
 myArray[5]+=" Kayahan "
 console.log(myArray)
 console.log(myArray[0]+" / "+myArray[5])
+console.log("-----------------------------------------");
+let myArray2=[true,false,23,"candy"]
+let [a,s,d,f]=myArray2
+++d
+console.log(a,s,d,f)
+console.log(a)
+console.log(s)
+console.log(d)
+console.log(myArray2)
+console.log(myArray2[3])
 
 
 

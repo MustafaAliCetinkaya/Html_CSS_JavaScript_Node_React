@@ -18,5 +18,15 @@ let ax=""+45+98
 console.log(ax)
 let h="54"*"10"
 console.log(h)
+console.log("---------------------")
+for (var i = 0; i < 3; i++) {
+    console.log("Hello")
+}
+console.log("Here is outside: "+i)
+console.log("---------------------")
+for (let j = 0; j < 3; j++) {
+    console.log("Hello")
+}
+console.log("Here is outside: "+(++i))//Buraya j yazarsak hata verir. Çünkü var heryerdne erişilebilendir. Let ise sadece ve sadece block içinde geçerlidir.
 
 
