@@ -6,7 +6,7 @@ if (12 < 34) {
 
 (62 < 34) ? console.log("True") : console.log("False");
 
-for (var i = 0; i < 100; i++) {
+for (let i = 0; i < 100; i++) {
     if (i % 15 == 0) {
         console.log("FİNRA ");
     } else if (i % 5 == 0) {
@@ -18,7 +18,7 @@ for (var i = 0; i < 100; i++) {
     }
 }
 console.log("-----------------------------------------");
-var i=100;
+let i=100;
 
 while (i-->0){
     (i % 15 == 0)?console.log("FİNRA "):(i % 5 == 0)?
