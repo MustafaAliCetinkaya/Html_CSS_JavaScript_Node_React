@@ -36,3 +36,11 @@ let myStr = "JavaScript Course";
 for (let letter of myStr) {
     console.log(letter);
 }
+
+
+let myArray2 = ["Hello", "world", 6, 2, 55, 2332, 3434];
+const output = document.getElementById('output');
+let html = myArray2.map(function(value,index){
+    console.log(value);
+    console.log(index);
+})
