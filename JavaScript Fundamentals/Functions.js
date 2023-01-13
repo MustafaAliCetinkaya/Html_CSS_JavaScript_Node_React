@@ -15,11 +15,30 @@ console.log(test5(5,8));
 
 function test5(x,y){
     //y =  (typeof y !== 'undefined') ? y : 10;
-    y = y || 20;
+    y = y || 20;//New type of ternary
     console.log(x);
     console.log(y);
     return x * y;
 
+}
+console.log('-------------------');
+myFun5(3, 5, 6, 4, 3443, 43);
+
+function myFun5(a, b = 5, c = 10) {
+    console.log(arguments.length);
+    console.log(arguments[1]);
+}
+let myFun3 = (x = 10) => x * 10;
+var myFun4 = function myFun4() {
+    var x = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
+    return x * 10;
+};
+let myFun1 = function (x = 10) {
+    return x * 10;
+}
+
+function myFun2(x = 10) {
+    return x * 10;
 }
 console.log('-------------------');
 
