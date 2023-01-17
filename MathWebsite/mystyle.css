@@ -1,0 +1,34 @@
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-container > div {
+
+    background-color: #FFFF66;
+    width: 326px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.flex-container > div> a:any-link {
+    text-decoration: none;
+}
+.flex-container > div> a:hover {
+    text-decoration: underline;
+}
+*{
+    box-sizing: border-box;
+}
+.flex-container{
+    /* width: 100%; Default - Block Element*/
+    padding: 10px;
+    box-sizing: border-box;
+    /*
+      content-box is default for box-sizing
+      content-box will remove border-box effect.
+    */
+}
