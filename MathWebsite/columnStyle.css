@@ -1,16 +1,16 @@
-.flex-container {
+.column {
     display: flex;
     flex-direction: column;
+    float: left;
 }
 
 .flex-container > div {
-
     background-color: #FFFF66;
-    width: 226px;
-    height: fit-content;
+    border-style: dashed;
+    width: 326px;
     margin: 10px;
     text-align: center;
-    line-height:75px;
+    line-height:60px;
     font-size: 18px;
     font-weight: bold;
 
@@ -21,7 +21,19 @@
     text-decoration: none;
 }
 
+.flex-container > div>div> a:any-link {
+    text-decoration: none;
+}
+
 .flex-container > div> a:hover {
     text-decoration: underline;
+}
+
+.flex-container > div> div> a:hover {
+    text-decoration: underline;
+}
+
+.flex-container > div:nth-child(10){
+    line-height: 20px;
 }
 

@@ -1,30 +1,26 @@
-.row > .column2 > .flex-container2 {
+.row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    float: right;
 }
 
-.flex-container2 > div {
 
-    background-color: #FFFF66;
-    width: 326px;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 16px;
-    font-weight: bold;
-
-}
-
-.row > .column2 > .flex-container2 > h1 {
+.text > h1 {
     text-align: center;
     color: darkred;
 }
 
-.flex-container2 > p {
+.text {
     text-align: justify;
+    margin-left: 3%;
+    margin-right: 3%;
     color:blue;
     font-weight: bold;
     line-height: 30px;
     font-size:large;
+}
+
+#contentFrame{
+    align-items: center;
 }
 
