@@ -10,6 +10,20 @@ html, body {
   color: #ffeead;
 }
 
+.container2 > div {
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+  color: #ffeead;
+}
+
+.container3 > div {
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+  color: gray;
+}
+
 .container > div:nth-child(1) {
   background-color: #96ceb4;	
 }

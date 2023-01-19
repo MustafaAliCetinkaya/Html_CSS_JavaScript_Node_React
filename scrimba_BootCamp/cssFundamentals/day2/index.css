@@ -12,6 +12,7 @@ space-between space-evenly */
   display: flex;
   justify-content: flex-end;
   margin: 20px;
+  background-color: indianred;
 }
 
 .container3 {
@@ -20,5 +21,8 @@ space-between space-evenly */
   /*justify-content: space-evenly;*/
   justify-content: space-between;
   margin: 20px;
+  background-color: #FFFF66;
 }
 
+/* flex-start flex-end center space-around
+space-between space-evenly */
