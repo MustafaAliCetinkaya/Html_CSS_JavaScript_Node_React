@@ -1,8 +1,9 @@
 .container > div {
   padding: 10px;
+  position: center;
   text-align: center;
   font-size: 2em;
-  color: #ffeead;
+  color:darkred;
 }
 
 html, body {
@@ -11,14 +12,19 @@ html, body {
 }
 
 .container > div:nth-child(1) {
-  background-color: #96ceb4;	
+  background-color: #96ceb4;
+  padding: 10%;
 }
 
 .container > div:nth-child(2) {
   background-color: #ff6f69;
+  padding: 15%;
 }
 
 .container > div:nth-child(3) {
   background-color: #88d8b0;
+
+  justify-content: center; /* Centering Horizontally */
+  align-items: normal/* Centering Vertically */
 }
 

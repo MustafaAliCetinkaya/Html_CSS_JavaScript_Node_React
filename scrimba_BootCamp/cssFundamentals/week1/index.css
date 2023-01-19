@@ -3,5 +3,6 @@
   display: flex;
   margin-left: 20%;
   padding-top: 30%;
+  align-items: center;
   /*float: left;*/
 }
