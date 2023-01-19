@@ -3,6 +3,7 @@
   display: flex;
   margin-left: 20%;
   padding-top: 30%;
-  align-items: center;
+  justify-content: center; /* Centering Horizontally */
+  align-items: center/* Centering Vertically */
   /*float: left;*/
 }

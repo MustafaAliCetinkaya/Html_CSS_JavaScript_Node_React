@@ -23,8 +23,7 @@ html, body {
 
 .container > div:nth-child(3) {
   background-color: #88d8b0;
+  padding: 10%;
 
-  justify-content: center; /* Centering Horizontally */
-  align-items: normal/* Centering Vertically */
 }
 
