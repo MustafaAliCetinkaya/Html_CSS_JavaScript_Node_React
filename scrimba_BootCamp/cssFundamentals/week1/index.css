@@ -1,6 +1,6 @@
 .container {
   border: 15px solid #ffcc5c;
-  display: flex;
+  display: flex;/*Converted the data to flex box*/
   margin-left: 20%;
   padding-top: 30%;
   justify-content: center; /* Centering Horizontally */
