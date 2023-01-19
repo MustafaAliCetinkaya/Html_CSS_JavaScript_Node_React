@@ -37,3 +37,31 @@
     line-height: 20px;
 }
 
+
+.row {
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+
+
+.text > h1 {
+    text-align: center;
+    color: darkred;
+}
+
+.text {
+    text-align: justify;
+    margin-left: 3%;
+    margin-right: 3%;
+    color:blue;
+    font-weight: bold;
+    line-height: 30px;
+    font-size:large;
+}
+
+#contentFrame{
+    align-items: center;
+}
+
+

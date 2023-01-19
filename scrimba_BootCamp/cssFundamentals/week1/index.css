@@ -1,0 +1,7 @@
+.container {
+  border: 15px solid #ffcc5c;
+  display: flex;
+  margin-left: 20%;
+  padding-top: 30%;
+  /*float: left;*/
+}
