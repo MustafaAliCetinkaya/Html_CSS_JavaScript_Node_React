@@ -1,0 +1,176 @@
+/* flex-start flex-end center space-around
+space-between space-evenly */
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.container > div{
+  flex:1; /*Fills the box and makes it responsive*/
+}
+
+.container2 {
+  border: 8px solid darkred;
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px;
+  background-color: indianred;
+}
+
+.container2 > div{
+  flex:1; /*Fills the box and makes it responsive*/
+}
+
+.container3 {
+  border: 10px solid deepskyblue;
+  display: flex;
+  /*justify-content: space-evenly;*/
+  justify-content: space-between;
+  margin: 20px;
+  background-color: #FFFF66;
+}
+
+.container3 > div{
+  flex:1; /*Fills the box and makes it responsive*/
+}
+
+.container3 > .search3{ /*Must be specific than the above code (.container3 > div)*/
+  flex:3; /*3 times bigger than others*/
+}
+
+.container4 {
+  border: 10px solid purple;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-evenly;*/
+  justify-content: space-between;
+  margin: 20px;
+  background-color: fuchsia;
+}
+
+.container4 > div{
+  flex:2; /*Fills the box and makes it responsive*/
+}
+
+/* flex-start flex-end center space-around
+space-between space-evenly */
+
+.home2{
+  border: 5px dashed yellow;
+}
+
+.search2{
+  border: 7px dashed lightseagreen ;
+  margin-left: auto;
+}
+
+.logout2{
+  border: 3px dashed black;
+}
+
+
+.home3{
+  border: 5px dashed yellow;
+}
+
+.search3{
+  border: 8px solid grey ;
+
+}
+
+.logout3{
+  margin-left: auto;
+  border: 10px solid darkred;
+}
+
+.home4{
+  border: 5px dashed yellow;
+  margin-left: auto;
+  background-color: #DD6600;
+}
+
+.search4{
+  border: 8px solid grey ;
+  margin-bottom: auto;
+
+}
+
+.logout4{
+  border: 10px solid darkred;
+}
+/*
+Basic Styles
+*/
+html, body {
+  background-color: yellowgreen;
+  margin: 10px;
+}
+
+.container > div {
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+  color: #ffeead;
+}
+
+.container2 > div {
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+  color: #ffeead;
+}
+
+.container3 > div {
+  padding: 30px;
+  text-align: center;
+  font-size: 2em;
+  color: gray;
+}
+
+.container4 > div {
+  padding: 30px;
+  text-align: center;
+  font-size: 2em;
+  color: gray;
+}
+
+.container > div:nth-child(1) {
+  background-color: #96ceb4;
+}
+
+.container > div:nth-child(2) {
+  background-color: #ff6f69;
+}
+
+.container > div:nth-child(3) {
+  background-color: #88d8b0;
+}
+.container > div:nth-child(4) {
+  background-color: darkgreen;
+}
+
+.container > div:nth-child(5) {
+  background-color: deepskyblue;
+}
+
+.container2 > div {
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+  color: #ffeead;
+}
+
+.container2 > div:nth-child(1) {
+  background-color: darkgrey;
+}
+
+.container2 > div:nth-child(2) {
+  background-color: lightsteelblue;
+}
+
+.container2 > div:nth-child(3) {
+  background-color: lightgreen;
+}
+
