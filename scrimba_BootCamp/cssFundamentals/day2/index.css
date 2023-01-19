@@ -1,0 +1,24 @@
+/* flex-start flex-end center space-around
+space-between space-evenly */
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.container2 {
+  border: 8px solid darkred;
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px;
+}
+
+.container3 {
+  border: 10px solid deepskyblue;
+  display: flex;
+  /*justify-content: space-evenly;*/
+  justify-content: space-between;
+  margin: 20px;
+}
+
