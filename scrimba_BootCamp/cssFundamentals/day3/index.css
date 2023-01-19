@@ -24,6 +24,16 @@ space-between space-evenly */
   background-color: #FFFF66;
 }
 
+.container4 {
+  border: 10px solid purple;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-evenly;*/
+  justify-content: space-between;
+  margin: 20px;
+  background-color: fuchsia;
+}
+
 /* flex-start flex-end center space-around
 space-between space-evenly */
 
@@ -52,5 +62,21 @@ space-between space-evenly */
 
 .logout3{
   margin-left: auto;
+  border: 10px solid darkred;
+}
+
+.home4{
+  border: 5px dashed yellow;
+  margin-left: auto;
+  background-color: #DD6600;
+}
+
+.search4{
+  border: 8px solid grey ;
+  margin-bottom: auto;
+
+}
+
+.logout4{
   border: 10px solid darkred;
 }
