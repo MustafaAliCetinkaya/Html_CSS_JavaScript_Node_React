@@ -1,0 +1,8 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  align-items: flex-end;
+}
