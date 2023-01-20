@@ -2,22 +2,21 @@
   border: 15px solid #ffcc5c;
   display: flex;/*Converted the data to flex box*/
   justify-content: center; /* Centering Horizontally */
-  align-items: center/* Centering Vertically */
-  /*float: left;*/
+  align-items: center;/* Centering Vertically */
+  height: 100%;
 }
 
 .home{
   flex:1 ;  /*Others will be permanent/fixed. This will be flexible Sadece bir tanesini esnek yapacaksak sayı değerinin kaç olduğunun farkı yok. Ama başkalarına da esneklik vereceksek bu sayı diğerlerinden kaç katı olacağını gösterir */
 }
 
-.container2>div {
+.container2 {
   background-color: #ff6f69;
-  border: 15px solid #ffcc5c;
+  border: 15px dashed #ffcc5c;
   display: flex;            /*Converted the data to flex box*/
   height: 100%;             /*Freely moves without attached to the frame*/
   align-items: center;      /* Centering Vertically */
   justify-content: center;  /* Centering Horizontally */
-  /*float: left;*/
 }
 /*
 
@@ -26,11 +25,18 @@ Basic Styles
 */
 
 .container1 > div {
-  padding: 10px;
-  position: center;
+  padding: 50px;
   text-align: center;
   font-size: 2em;
   color:darkred;
+}
+.container2 > div {
+  background-color: #96ceb4;
+  display: flex;
+  padding: 10px;
+  text-align: center;
+  font-size: 6em;
+  color:blue;
 }
 
 html, body {
@@ -38,8 +44,13 @@ html, body {
   height: 100%;
 }
 
+.body{
+  margin: 0;
+}
+
 .container1 > div:nth-child(1) {
   background-color: #96ceb4;
+
 }
 
 .container1 > div:nth-child(2) {
@@ -50,6 +61,14 @@ html, body {
 .container1 > div:nth-child(3) {
   background-color: #88d8b0;
 
+}
+
+.logout{
+  align-self: flex-start;
+}
+
+.home{
+  align-self: end;
 }
 
 
