@@ -2,7 +2,16 @@
   border: 5px solid #ffcc5c;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   height: 100%;
-  align-items: flex-end;
+  /*justify-content: center;*/
+  /*justify-content: flex-start;*/
+  justify-content: flex-end;
+  align-items: self-end;
+  /*align-items: self-start;*/
+  /*align-items: center;    Centralize the item in the middle of the table*/
+ /*align-items: stretch;  Fills the table*/
+}
+
+.home{
+  border: 5px dashed blue;
 }
