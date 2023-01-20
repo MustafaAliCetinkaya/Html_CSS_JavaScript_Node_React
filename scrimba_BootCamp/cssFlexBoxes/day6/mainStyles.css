@@ -7,7 +7,7 @@
 }
 
 .home{
-  flex:1 ;  /*Others will be permanent/fixed. This will be flexible*/
+  flex:1 ;  /*Others will be permanent/fixed. This will be flexible Sadece bir tanesini esnek yapacaksak sayı değerinin kaç olduğunun farkı yok. Ama başkalarına da esneklik vereceksek bu sayı diğerlerinden kaç katı olacağını gösterir */
 }
 
 .container2>div {
