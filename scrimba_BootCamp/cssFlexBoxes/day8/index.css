@@ -1,0 +1,7 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  width:900px;
+  flex-wrap: wrap;/*If the box not big enough, last item will go below*/
+  justify-content: space-evenly;
+}

@@ -7,7 +7,8 @@
 }
 
 .home{
-  flex:1 ;  /*Others will be permanent/fixed. This will be flexible*/
+  flex:1 ;  /*Others will be permanent/fixed.
+  This will be flexible. İt is a shorthand operator for 3 flex feature-shrink,grow,basis*/
 }
 
 /*
