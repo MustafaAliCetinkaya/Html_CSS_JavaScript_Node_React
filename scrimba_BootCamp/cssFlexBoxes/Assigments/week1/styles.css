@@ -1,0 +1,46 @@
+
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    background-color: darkgrey;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 10%;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    border: 4px solid darkgreen;
+    align-items: center;
+}
+.row > div{
+    font-size: larger;
+    color: #ffeead;
+    background-color: #ff6f69;
+    align-items: center;
+    height: 100%;
+    padding-left: 5%;
+
+}
+
+.column > div{
+    text-justify: auto;
+    font-size: 2em;
+    font-weight: bold;
+    border: 4px solid darkblue;
+    margin: 5%;
+
+}
+
+.item1{
+    text-align: center;
+    justify-content: center;
+
+}
