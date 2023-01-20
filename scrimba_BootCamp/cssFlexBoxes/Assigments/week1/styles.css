@@ -8,9 +8,9 @@ html, body {
 
 .header{
     display: flex;
+    flex: 1;
     flex-direction: row;
     justify-content: center;
-    border: 4px dot-dash red;
 }
 
 .header > div{
@@ -65,7 +65,20 @@ html, body {
 }
 .head2{
     order:1;
+
 }
 .head3{
     order:0;
+}
+.searchBox{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 2%;
+    margin-bottom: 1%;
+}
+.searchBox > input{
+    width: 18%;
+    text-align: center;
 }
