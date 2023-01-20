@@ -8,9 +8,9 @@
 <table border="1">
     <script>
         document.write("<table border='2'>");
-        for (var i = 1; i <= 30; i++) {
+        for (let i = 1; i <= 30; i++) {
             document.write("<tr style='background-color: darkseagreen'>");
-            for (var j = 1; j <= 30; j++) {
+            for (let j = 1; j <= 30; j++) {
                 if(i==j){
                     document.write(
                         "<td style='background-color: yellow'>"+ (i * j) + "</td>");
