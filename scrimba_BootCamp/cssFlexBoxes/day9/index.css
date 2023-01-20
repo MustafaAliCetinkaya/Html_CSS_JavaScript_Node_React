@@ -1,0 +1,22 @@
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+}
+
+.home {
+  flex: 1 1 700px;/*This line is a shorthand for below three lines. Same functionality*/
+  /*
+ flex-grow: 1;        Shows one part how many times bigger than other
+  flex-shrink: 1;     When we change the size of the box, determines hot it reacts.
+  flex-basis: 200px;  Gap may remain at the end
+  */
+}
+
+.logout {
+  flex: 1 1 100px;
+  /*
+flex-grow: 1;        Shows one part how many times bigger than other
+ flex-shrink: 1;     When we change the size of the box, determines hot it reacts.
+ flex-basis: 200px;  Gap may remain at the end
+ */
+}
