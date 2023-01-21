@@ -5,12 +5,48 @@
 
 .item1 {
   order: 1;
+  flex: 2;
 }
 
 .item2 {
   order: 2;
+  flex: 1;
 }
 
 .item3 {
   order: -1;
+  flex: 1;
+}
+
+@media all and (max-width:400px ) {
+  .container {
+    flex-wrap: wrap;
+  }
+  .item1{
+    flex:1 1 50%;
+  }
+  .item2{
+    flex:1 1 50%;
+  }
+  .item3{
+    flex:1 1 50%;
+  }
+}
+
+.search-input {
+  background: #ff6e68;
+  border: 0;
+  width: 100%;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #ffeead;
+  color: #ffeead;
+}
+::placeholder{
+  color: #ffeead;
+  text-align: center;
+}
+
+.search-input:focus {
+  outline: none;
 }

@@ -5,6 +5,15 @@
   color: #ffeead;
 }
 
+.unordered-list > li {
+  padding: 10px;
+  text-align: center;
+  font-size: 2em;
+  color: #ffeead;
+  background-color: #96ceb4;
+}
+
+
 body {
   margin: 0;
 }
