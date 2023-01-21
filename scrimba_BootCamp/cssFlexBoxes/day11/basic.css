@@ -24,6 +24,7 @@ html, body {
   background: transparent;
   border-bottom: 1px solid #ffeead;
   color: #ffeead;
+  text-align: center;
 }
 ::placeholder{
   color: #ffeead;
@@ -31,6 +32,7 @@ html, body {
 
 .search-input:focus {
   outline: none;
+
 }
 
 .container > li {
