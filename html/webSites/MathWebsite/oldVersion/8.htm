@@ -38,24 +38,23 @@ function clickSwapImg() {}
 	<tr>
 		<td align="center">
 		<p style="margin-top: 6px; margin-bottom: 12px">
-		<font size="4" color="#000099"><b>Constructing a Perpendicular at the 
-		Endpoint of a Ray</b></font></td>
+		<font size="4" color="#000099"><b>Circumcenter of a Triangle </b></font></td>
 	</tr>
 </table>
 <p style="margin-top: 6px; margin-bottom: 12px">&nbsp;</p>
-<p style="margin-top: 6px; margin-bottom: 12px"><b><font color="#0000FF">This 
-demonstration shows how to draw a perpendicular at the endpoint of a ray or line 
-segment, using only a compass and straightedge. </font></b></p>
+<p style="margin-top: 6px; margin-bottom: 12px"><font color="#0000ff"><b>This 
+demonstration shows </b></font><font color="#0000FF"><b>how to 
+construct the circumcenter of a triangle using only a compass and straightedge.</b></font></p>
 <p style="margin-top: 6px; margin-bottom: 12px">&nbsp;</p>
 <table border="0" width="900" id="table2" cellpadding="4" bgcolor="#FFFFCC" bordercolor="#3399FF">
 	<tr>
 		<td align="center">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
-		<b><a href="0.htm"><span style="text-decoration: none">Home</span></a></b></p>
+		<b><a href="../0.htm"><span style="text-decoration: none">Home</span></a></b></p>
 		</td>
 		<td align="center" width="110">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
-		<b><a href="1.htm"><span style="text-decoration: none">Copying a line segment</span></a></b></p>
+		<b><a href="../1.htm"><span style="text-decoration: none">Copying a line segment</span></a></b></p>
 		</td>
 		<td align="center" width="273">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
@@ -80,7 +79,7 @@ segment, using only a compass and straightedge. </font></b></p>
 		<b><a href="5.htm"><span style="text-decoration: none">Constructing a 60° angle 
 		</span></a></b></p>
 		</td>
-		<td align="center" width="174" valign="top">
+		<td align="center" width="176" valign="top">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
 		<b><a href="6.htm"><span style="text-decoration: none">Constructing an Equilateral Triangle&nbsp; 
 		</span></a></b></p>
@@ -89,7 +88,7 @@ segment, using only a compass and straightedge. </font></b></p>
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
 		<b><a href="7.htm"><span style="text-decoration: none">Finding the center of a circle</span></a></b></p>
 		</td>
-		<td align="center" width="180" valign="top">
+		<td align="center" width="176" valign="top">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
 		<b><a href="8.htm"><span style="text-decoration: none">Circumcenter of a triangle 
 		</span></a> <br>
@@ -103,26 +102,48 @@ segment, using only a compass and straightedge. </font></b></p>
 	</tr>
 	</table>
 <p style="margin-top: 6px; margin-bottom: 12px">
-<APPLET CODE="GSP.class"  ARCHIVE="jsp4.jar" CODEBASE="jsp" WIDTH=906 HEIGHT=643 ALIGN=CENTER><PARAM NAME=MeasureInDegrees VALUE=1><PARAM NAME=DirectedAngles VALUE=0>
+<APPLET CODE="GSP.class"  ARCHIVE="jsp4.jar" CODEBASE="jsp" WIDTH=906 HEIGHT=646 ALIGN=CENTER><PARAM NAME=MeasureInDegrees VALUE=1><PARAM NAME=DirectedAngles VALUE=0>
 <PARAM NAME=BackRed VALUE=255>
 <PARAM NAME=BackGreen VALUE=255>
 <PARAM NAME=BackBlue VALUE=255>
 <PARAM NAME=Construction VALUE="
-{1} Point(47,345)[label('A')];
-{2} Point(448,343)[hidden];
-{3} Ray(2,1)[color(0,0,128)];
-{4} Point(172,274)[label('C'),hidden];
-{5} Circle(4,1)[color(0,128,0),hidden];
-{6} Intersect2(3,5)[hidden];
-{7} Ray(4,6)[hidden];
-{8} Intersect2(7,5)[hidden];
-{9} Segment(8,6)[hidden];
-{10} Segment(8,1)[color(0,0,128),hidden];
-{11} Angle(8,1,6,67,338,'')[hidden];
-{12} ShowButton(10,5,'1.Step')(4)[black];
-{13} ShowButton(10,26,'2.Step')(5,6)[black];
-{14} ShowButton(10,47,'3.Step')(9,8)[black];
-{15} ShowButton(10,68,'4.Step')(10,11)[black];
+{1} Point(524,269)[label('A')];
+{2} Point(367,357)[label('B')];
+{3} Segment(2,1)[color(0,0,128)];
+{4} Point(639,359)[label('C')];
+{5} Segment(4,1)[color(0,0,128)];
+{6} Segment(2,4)[color(0,0,128)];
+{7} Point on object(3,0.338253)[hidden];
+{8} Circle(2,7)[color(0,128,0),hidden];
+{9} Distance(7,2,14,19,'')[hidden];
+{10} Circle by radius(1,9)[color(0,128,0),hidden];
+{11} Intersect2(10,8)[hidden];
+{12} Intersect1(10,8)[hidden];
+{13} Ray(12,11)[hidden];
+{14} Point on object(13,1.61925)[hidden];
+{15} Point(428,269)[hidden];
+{16} Circle(1,15)[color(255,128,0),hidden];
+{17} Intersect2(5,16)[hidden];
+{18} Distance(17,1,14,39,'')[hidden];
+{19} Circle by radius(4,18)[color(255,128,0),hidden];
+{20} Intersect2(19,16)[hidden];
+{21} Intersect2(5,10)[hidden];
+{22} Intersect1(19,16)[hidden];
+{23} Ray(22,20)[hidden];
+{24} Point on object(23,1.23119)[hidden];
+{25} Segment(14,11)[hidden];
+{26} Intersect(25,3)[red,hidden];
+{27} ShowButton(10,8,'Find perpendicular bisector of |AB| by using circles')(11,8,10,13,26,12)[black];
+{28} Segment(24,20)[hidden];
+{29} Intersect(28,25)[label('circumcenter'),red];
+{30} Circle(29,4)[green,thick];
+{31} Point on object(30,1.46727)[red];
+{32} Segment(31,29)[green,thick];
+{33} Intersect(28,5)[red,hidden];
+{34} ShowButton(10,29,'Find perpendicular bisector of |AB| by using circles')(16,19,20,23,33,22)[black];
+{35} Intersect(23,13)[hidden];
+{36} Circle(35,2)[hidden];
+{37} ShowButton(10,50,'Determine circumcenter and construct circumcircle of the triangle')(36,35)[black];
 ">
 Sorry, this page requires a Java-compatible web browser.</APPLET></p>
 <table border="0" width="900" id="table4" cellpadding="4" bgcolor="#FFFFCC">
@@ -136,68 +157,52 @@ Sorry, this page requires a Java-compatible web browser.</APPLET></p>
 <table class="MsoNormalTable" border="0" cellspacing="10" cellpadding="0" id="table5">
 	<tr>
 		<td width="50" valign="top" style="width:37.5pt;padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
+		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
 		<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
 		Step 1</span></font></td>
 		<td style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
+		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px">
 		<span style="font-size:10.0pt;
-  font-family:Arial">Pick a point not on the line, about 6 cm from the endpoint 
-		of the ray. Its exact location is not important.</span></font></td>
+  font-family:Arial"><font color="#0000FF">Find the </font>
+		<a title="a line  that divides another into two equal parts" style="color: #0000FF; text-decoration: none; text-underline: none; text-line-through: none" href="http://www.mathopenref.com/bisectorline.html">
+		bisector</a><font color="#0000FF"> of one of the triangle sides. Any one 
+		will do. See </font>
+		<a style="color: #0000FF; text-decoration: none; text-underline: none; text-line-through: none" href="http://www.mathopenref.com/constbisectline.html">
+		Constructing the Perpendicular Bisector of a Line Segment</a><font color="#0000FF">.</font></span></td>
 	</tr>
 	<tr>
 		<td valign="top" style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
+		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
 		<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
 		Step 2</span></font></td>
 		<td style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
+		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
 		<span style="font-size:10.0pt;
-  font-family:Arial">Set the compass on that point and set its width to the 
-		endpoint of the ray.</span></font></td>
+  font-family:Arial">Repeat for the another side. Any one will do.</span></font></td>
 	</tr>
 	<tr>
 		<td valign="top" style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
+		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
 		<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
 		Step 3</span></font></td>
 		<td style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
+		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
 		<span style="font-size:10.0pt;
-  font-family:Arial">Draw an circle that crosses the ray and extends over and 
-		above the ray endpoint. (If you prefer, draw a complete circle.)</span></font></td>
+  font-family:Arial">Mark the point where these two perpendiculars intersect as 
+		point O. </span></font></td>
 	</tr>
 	<tr>
 		<td valign="top" style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
+		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
 		<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
 		Step 4</span></font></td>
 		<td style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
+		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
 		<span style="font-size:10.0pt;
-  font-family:Arial">Draw a diameter through first point from the point where 
-		the circle crosses the ray.</span></font></td>
-	</tr>
-	<tr>
-		<td valign="top" style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
-		<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
-		Step 5</span></font></td>
-		<td style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
-		<span style="font-size:10.0pt;
-  font-family:Arial">Draw a line from the ray's endpoint to the endpoint of the 
-		diameter line</span></font></td>
-	</tr>
-	<tr>
-		<td valign="top" style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
-		<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
-		Step 6</span></font></td>
-		<td style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:12.75pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
-		<span style="font-size:10.0pt;
-  font-family:Arial">Done. The last line drawn is perpendicular to the ray.</span></font></td>
+  font-family:Arial">Done. The point O is the circumcenter of the triangle ABC.
+		<br>
+		<b><i>Note:</i></b> This point may lie outside the triangle. This is 
+		normal.</span></font></td>
 	</tr>
 </table>
 

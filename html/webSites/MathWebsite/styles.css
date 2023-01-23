@@ -1,0 +1,84 @@
+
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    background-color: darkgrey;
+}
+
+.header{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header > div{
+    font-weight: bold;
+    margin-left: 3%;
+    margin-bottom: 1%;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 10%;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    border: 4px solid darkgreen;
+    align-items: center;
+    margin-left: 12%;
+    margin-right: 2%;
+    overflow-y: auto;
+    height: 500px;
+}
+.row > div{
+    font-size: larger;
+    color: #ffeead;
+    background-color: #ff6f69;
+    align-items: center;
+    height: 100%;
+    padding-left: 5%;
+}
+
+.column > div{
+    text-justify: auto;
+    font-size: 2em;
+    font-weight: bold;
+    border: 4px solid darkblue;
+    margin: 5%;
+
+}
+
+.item1{
+    text-align: center;
+    justify-content: center;
+}
+
+.head1{
+    order:2;
+}
+.head2{
+    order:1;
+
+}
+.head3{
+    order:0;
+}
+.searchBox{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 2%;
+    margin-bottom: 1%;
+}
+.searchBox > input{
+    width: 18%;
+    text-align: center;
+}

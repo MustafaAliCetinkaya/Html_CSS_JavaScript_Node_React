@@ -38,29 +38,27 @@ function clickSwapImg() {}
 	<tr>
 		<td align="center">
 		<p style="margin-top: 6px; margin-bottom: 12px">
-		<font size="4" color="#000099"><b>Tangents Through an External Point - 
-		Construction </b></font></td>
+		<font size="4" color="#000099"><b>Finding the Center of a Circle</b></font></td>
 	</tr>
 </table>
 <p style="margin-top: 6px; margin-bottom: 12px">&nbsp;</p>
 <p style="margin-top: 6px; margin-bottom: 12px"><font color="#0000FF"><b>This 
-demonstration shows how to construct the two possible tangents to a given circle 
-through a given external point using only<br> a compass and straight edge. </b>
-</font></p>
+demonstration shows how to find the center of a circle using only a compass and 
+straightedge. </b></font></p>
 <p style="margin-top: 6px; margin-bottom: 12px">&nbsp;</p>
 <table border="0" width="900" id="table2" cellpadding="4" bgcolor="#FFFFCC" bordercolor="#3399FF">
 	<tr>
 		<td align="center">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
-		<b><a href="0.htm"><span style="text-decoration: none">Home</span></a></b></p>
+		<b><a href="../0.htm"><span style="text-decoration: none">Home</span></a></b></p>
 		</td>
 		<td align="center" width="110">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
-		<b><a href="1.htm"><span style="text-decoration: none">Copying a line segment</span></a></b></p>
+		<b><a href="2.htm"><span style="text-decoration: none">Copying a line segment</span></a></b></p>
 		</td>
 		<td align="center" width="273">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
-		<b><a href="2.htm"><span style="text-decoration: none">Constructing a perpendicular bisector of a line segment 
+		<b><a href="3.htm"><span style="text-decoration: none">Constructing a perpendicular bisector of a line segment 
 		</span></a></b></p>
 		</td>
 		<td align="center" width="264">
@@ -81,16 +79,16 @@ through a given external point using only<br> a compass and straight edge. </b>
 		<b><a href="5.htm"><span style="text-decoration: none">Constructing a 60° angle 
 		</span></a></b></p>
 		</td>
-		<td align="center" width="175" valign="top">
+		<td align="center" width="171" valign="top">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
-		<b><a href="6.htm"><span style="text-decoration: none">Constructing an Equilateral Triangle&nbsp; 
-		</span></a></b></p>
+		<b><a href="6.htm"><span style="text-decoration: none">Constructing an Equilateral Triangle&nbsp;</span></a>
+		</b></p>
 		</td>
-		<td align="center" width="151" valign="top">
+		<td align="center" width="154" valign="top">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
 		<b><a href="7.htm"><span style="text-decoration: none">Finding the center of a circle</span></a></b></p>
 		</td>
-		<td align="center" width="179" valign="top">
+		<td align="center" width="177" valign="top">
 		<p dynamicanimation="fpAnimformatRolloverFP1" fprolloverstyle="font-variant: small-caps" onmouseover="rollIn(this)" onmouseout="rollOut(this)" language="Javascript1.2" style="margin-top: 6px; margin-bottom: 12px">
 		<b><a href="8.htm"><span style="text-decoration: none">Circumcenter of a triangle 
 		</span></a> <br>
@@ -104,36 +102,49 @@ through a given external point using only<br> a compass and straight edge. </b>
 	</tr>
 	</table>
 <p style="margin-top: 6px; margin-bottom: 12px">
-<APPLET CODE="GSP.class"  ARCHIVE="jsp4.jar" CODEBASE="jsp" WIDTH=904 HEIGHT=625 ALIGN=CENTER><PARAM NAME=MeasureInDegrees VALUE=1><PARAM NAME=DirectedAngles VALUE=0>
+<APPLET CODE="GSP.class"  ARCHIVE="jsp4.jar" CODEBASE="jsp" WIDTH=905 HEIGHT=642 ALIGN=CENTER><PARAM NAME=MeasureInDegrees VALUE=1><PARAM NAME=DirectedAngles VALUE=0>
 <PARAM NAME=BackRed VALUE=255>
 <PARAM NAME=BackGreen VALUE=255>
 <PARAM NAME=BackBlue VALUE=255>
 <PARAM NAME=Construction VALUE="
-{1} Point(411,381)[label('O')];
-{2} Point(496,417)[hidden];
+{1} Point(509,359)[hidden];
+{2} Point(554,464)[hidden];
 {3} Circle(1,2)[color(0,128,0)];
-{4} Point(640,384)[label('P')];
-{5} Segment(4,1)[color(0,0,128)];
-{6} Point on object(5,0.663584)[hidden];
-{7} Circle(1,6)[red,hidden];
-{8} Distance(6,1,14,19,'')[hidden];
-{9} Circle by radius(4,8)[red,hidden];
-{10} Intersect2(9,7)[hidden];
-{11} Intersect1(9,7)[hidden];
-{12} Segment(10,11)[hidden];
-{13} Intersect(12,5)[label('M'),red,hidden];
-{14} Circle(13,1)[magenta,hidden];
-{15} Intersect2(14,3)[hidden];
-{16} Intersect1(14,3)[hidden];
-{17} ShowButton(10,26,'Construct a circle whose center is midpoint of |OP|')(14,15,16)[black];
-{18} Segment(4,15)[hidden];
-{19} Segment(4,16)[hidden];
-{20} Angle(1,15,4,213,113,'')[hidden];
-{21} Angle(1,16,4,213,133,'')[hidden];
-{22} Angle(15,4,1,325,113,'')[hidden];
-{23} Angle(1,4,16,325,133,'')[hidden];
-{24} ShowButton(10,5,'Find the midpoint of |OP| by constructing circles')(9,7,10,11,12,13)[black];
-{25} ShowButton(10,47,'Draw tangent lines')(18,19)[black];
+{4} Point on object(3,2.76616)[hidden];
+{5} Point on object(3,-2.05542)[hidden];
+{6} Segment(5,4)[hidden];
+{7} Point on object(3,-0.980176)[hidden];
+{8} Point on object(3,-0.247262)[hidden];
+{9} Segment(8,7)[hidden];
+{10} Point on object(9,0.619761)[hidden];
+{11} Circle(7,10)[hidden];
+{12} Distance(10,7,14,19,'')[hidden];
+{13} Circle by radius(8,12)[hidden];
+{14} Intersect2(13,11)[hidden];
+{15} Intersect1(13,11)[hidden];
+{16} Ray(15,14)[hidden];
+{17} Point on object(16,3.50783)[hidden];
+{18} Point on object(6,0.680039)[hidden];
+{19} Circle(4,18)[hidden];
+{20} Distance(4,18,14,19,'')[hidden];
+{21} Circle by radius(5,20)[hidden];
+{22} Intersect2(21,19)[hidden];
+{23} Intersect1(21,19)[hidden];
+{24} Ray(23,22)[hidden];
+{25} Point on object(24,1.44771)[hidden];
+{26} ShowButton(10,5,'Draw any two chords of the circle')(6,5,4,9,7,8)[black];
+{27} ShowButton(10,26,'Find the midpoints of the chords by using circles')(21,19,22,23,11,13,15,14)[black];
+{28} Segment(25,22)[hidden];
+{29} Intersect(28,6)[hidden];
+{30} Segment(17,14)[hidden];
+{31} Intersect(30,9)[hidden];
+{32} Intersect2(30,21)[hidden];
+{33} Intersect(28,30)[hidden];
+{34} Intersect1(30,21)[hidden];
+{35} Ray(29,22)[hidden];
+{36} Intersect(16,35)[hidden];
+{37} ShowButton(10,47,'Draw perpendicular bisectors of the chords')(29,35,16,31)[black];
+{38} ShowButton(10,68,'Intersection of the bisectors is center')(36)[black];
 ">
 Sorry, this page requires a Java-compatible web browser.</APPLET></p>
 <table border="0" width="900" id="table4" cellpadding="4" bgcolor="#FFFFCC">
@@ -153,8 +164,8 @@ Sorry, this page requires a Java-compatible web browser.</APPLET></p>
 		<td style="padding:.75pt .75pt .75pt .75pt">
 		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
 		<span style="font-size:10.0pt;
-  font-family:Arial">Draw a straight line between the center O of the given 
-		circle and the given point P.</span></font></td>
+  font-family:Arial">Using a straightedge, draw any two chords of the circle. 
+		For greatest accuracy, avoid chords that are nearly parallel.</span></font></td>
 	</tr>
 	<tr>
 		<td valign="top" style="padding:.75pt .75pt .75pt .75pt">
@@ -164,12 +175,10 @@ Sorry, this page requires a Java-compatible web browser.</APPLET></p>
 		<td style="padding:.75pt .75pt .75pt .75pt">
 		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px">
 		<span style="font-size:10.0pt;
-  font-family:Arial"><font color="#0000FF">Find the </font>
-		<a title="a point on a line segemnt that divides it into two equal parts" style="color: #0000FF; text-decoration: none; text-underline: none; text-line-through: none" href="http://www.mathopenref.com/midpoint.html">
-		midpoint</a><font color="#0000FF"> of this line by constructing the 
-		line's perpendicular bisector. See </font>
+  font-family:Arial"><font color="#0000FF">Construct the perpendicular bisector 
+		of one of the chords using the method described in </font>
 		<a style="color: #0000FF; text-decoration: none; text-underline: none; text-line-through: none" href="http://www.mathopenref.com/constbisectline.html">
-		Constructing the Perpendicular Bisector of a Line Segment</a><font color="#0000FF">.</font></span></td>
+		Constructing a perpendicular bisector of a line segment</a></span></td>
 	</tr>
 	<tr>
 		<td valign="top" style="padding:.75pt .75pt .75pt .75pt">
@@ -179,8 +188,7 @@ Sorry, this page requires a Java-compatible web browser.</APPLET></p>
 		<td style="padding:.75pt .75pt .75pt .75pt">
 		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
 		<span style="font-size:10.0pt;
-  font-family:Arial">Place the compass on the midpoint just constructed, and set 
-		it's width so that it passes through the center O of the circle..</span></font></td>
+  font-family:Arial">Repeat for the other chord</span></font></td>
 	</tr>
 	<tr>
 		<td valign="top" style="padding:.75pt .75pt .75pt .75pt">
@@ -190,32 +198,8 @@ Sorry, this page requires a Java-compatible web browser.</APPLET></p>
 		<td style="padding:.75pt .75pt .75pt .75pt">
 		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
 		<span style="font-size:10.0pt;
-  font-family:Arial">Without changing the width, draw an arc across the circle 
-		in the two possible places. These are the contact points J, K for the 
-		tangents.</span></font></td>
-	</tr>
-	<tr>
-		<td valign="top" style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
-		<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
-		Step 5</span></font></td>
-		<td style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px">
-		<span style="font-size:10.0pt;
-  font-family:Arial"><font color="#0000FF">Draw the two </font>
-		<a title="A line that touches a circle at just one point" style="color: #0000FF; text-decoration: none; text-underline: none; text-line-through: none" href="http://www.mathopenref.com/tangent.html">
-		tangent</a><font color="#0000FF"> lines from P through J and K.</font></span></td>
-	</tr>
-	<tr>
-		<td valign="top" style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#000099">
-		<span style="font-size: 10.0pt; font-family: Arial; font-weight: 700">
-		Step 6</span></font></td>
-		<td style="padding:.75pt .75pt .75pt .75pt">
-		<p class="MsoNormal" style="line-height:11.55pt; margin-top:6px; margin-bottom:12px"><font color="#0000FF">
-		<span style="font-size:10.0pt;
-  font-family:Arial">Done. The two lines just drawn are tangential to the given 
-		circle and pass through P. </span></font></td>
+  font-family:Arial">The point where the two lines intersect is the center C of 
+		the circle.</span></font></td>
 	</tr>
 </table>
 
