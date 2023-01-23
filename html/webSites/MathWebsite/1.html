@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Welcome to Discovering Geometry</title>
+</head>
+<body>
+<nav>
+    <div>
+        <div class="header">
+            <div class="head2">
+                <a href="index.html">Discover the Bright World of Mathematics</a>
+            </div>
+            <div class="search">
+                <div class="searchBox">
+                    <input type="text" style="border: 1px solid darkred" class="search-input" placeholder="Write and Search">
+                </div>
+            </div>
+            <div class="head3">
+                <a href="https://github.com/MustafaAliCetinkaya">Check Out My Source Codes on GitHub</a>
+            </div>
+        </div>
+        <div class="column">
+            <div>Home</div>
+            <div>Copying a Line Segment</div>
+             <div>Constructing a 30° Angle</div>
+            <div>Constructing a 60° Angle</div>
+            <div >Finding the Center of a Circle</div>
+            <div>Constructing Circumcenter of a Triangle</div>
+            <div >Constructing an Equilateral Triangle</div>
+            <div >Constructing a Perpendicular Bisector of a Line Segment</div>
+            <div >Constructing a Perpendicular at the Endpoint of a Ray</div>
+            <div >Constructing Tangents Through an External Point</div>
+        </div>
+        <div class="row">
+            <div class="text"><h2 align="center">Copying a Line Segment</h2>
+                <h4>(This demonstration shows how to make a copy of a line segment using only a compass and straight edge.)</h4>
+                <h5>Step by Step Instructions</h5>
+                <ol>
+                    <li>Mark a point R that will be one endpoint of the new line
+                        segment.</li>
+                    <li>Set the compass point on the point P of the line segment to
+                        be copied.</li>
+                    <li>Adjust the compass width to the point Q. The compass width
+                        is now equal to the length of the line segment PQ.</li>
+                    <li>Without changing the compass width, place the compass point
+                        on the point R on the line you drew in step-1.</li>
+                    <li>Without changing the compass width, draw an arc roughly
+                        where the other endpoint will be.</li>
+                    <li>Pick a point on the circle that will be the other endpoint
+                        of the new line segment.</li>
+                    <li>Draw a line between points.</li>
+                    <li>Done. The new line segment is equal in length (congruent
+                        to) the line segment |PQ|.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="try"><h2 align="center">We Remember 80% of What We Personally Experience. Construct Your Own Knowledge.</h2></div>
+        <div class="geogebra">
+            <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+            <div id="ggb-element"></div>
+            <script>
+                var params = {"appName": "geometry", "width": 900, "height": 600, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true };
+                var applet = new GGBApplet(params, true);
+                window.addEventListener("load", function() {
+                    applet.inject('ggb-element');
+                });
+            </script>
+        </div>
+    </div>
+
+</nav>
+</body>
+</html>
