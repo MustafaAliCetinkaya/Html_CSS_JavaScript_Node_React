@@ -25,6 +25,7 @@ html, body {
     margin-right: 1%;
     overflow-y: auto;
     height: 100%;
+    margin-top: 3%;
 }
 .row > .text{
 
@@ -34,6 +35,7 @@ html, body {
     align-items: center;
     text-align: left;
     line-height: 30px;
+    flex-wrap: wrap;
 }
 
 .geogebra{
@@ -55,6 +57,17 @@ html, body {
     margin: 3%;
     font-size: 14px;
 
+}
+
+
+.column > div> a:any-link {
+    font-weight: bold;
+    color: blue;
+    text-decoration: none;
+}
+
+.column > div> a:hover {
+    text-decoration: underline;
 }
 
 
@@ -99,5 +112,6 @@ html, body {
 }
 .searchBox > input{
     width: 100%;
+    text-align: center;
 
 }
