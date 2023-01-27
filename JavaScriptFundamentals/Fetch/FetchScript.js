@@ -10,8 +10,8 @@ function myJSON(){
     }).then(function(data){
         let html = '';
         data.results.forEach(function(person){
-            console.log(person);
-            //html += '<div>'+person.email+'</div>';
+            console.log(person.name);
+            html += '<div>'+person.email+'</div>';
             html += '<div>'+person.name.first+'</div>';
         });
         output.innerHTML = html;

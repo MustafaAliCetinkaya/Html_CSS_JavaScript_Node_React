@@ -1,29 +1,4 @@
-const output = document.getElementById('output');
-const clickMe = document.getElementById('clickMe');
-clickMe.addEventListener('click',myJSON);
 
-function myJSON(){
-    console.log('click');
-    const url = 'https://randomuser.me/api/?results=50';
-    fetch(url).then(function(response){
-        return response.json();
-    }).then(function(data){
-        let html = '';
-        data.results.forEach(function(person){
-            console.log(person);
-            //html += '<div>'+person.email+'</div>';
-            html += '<div>'+person.name.first+'</div>';
-        });
-        output.innerHTML = html;
-    }).catch(function(e){
-    })
-}
-
-
-
-
-//Another Application
-/*
 const output = document.getElementById('output');
 const clickMe = document.getElementById('clickMe');
 clickMe.addEventListener('click',myJSON);
@@ -40,7 +15,7 @@ function myJSON(){
     }).catch(function(e){
         console.log(e);
     })
-}*/
+}
 
 
 
