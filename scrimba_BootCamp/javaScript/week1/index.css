@@ -26,14 +26,14 @@ h2 {
 }
 
 button {
-    border: none;
+    border: solid;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: white;
+    color: green;
     font-weight: bold;
-    width: 200px;
+    width: 400px;
     margin-bottom: 5px;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 #increment-btn {
