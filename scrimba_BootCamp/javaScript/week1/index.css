@@ -25,11 +25,18 @@ h2 {
     font-size: 80px;
 }
 
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-evenly;
+}
 button {
     border: solid;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: green;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     width: 400px;
     margin-bottom: 5px;
@@ -37,7 +44,13 @@ button {
 }
 
 #increment-btn {
+    color: greenyellow;
     background: darkred;
+}
+
+#decrement-btn {
+    color: darkred;
+    background: greenyellow;
 }
 
 #save-btn {
