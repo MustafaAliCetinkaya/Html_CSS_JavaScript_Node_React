@@ -9,48 +9,27 @@ body {
 h1 {
     margin-top: 10px;
     margin-bottom: 10px;
-    text-align: start;
-    font-style: italic;
-    font-weight: bold;
-    color: darkred;
-    font-size: 80px;
-
 }
 
 h2 {
+    font-size: 50px;
     margin-top: 0;
     margin-bottom: 20px;
-    font-weight: bold;
-    color: blue;
-    font-size: 80px;
 }
 
-.buttons{
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    justify-content: space-evenly;
-}
 button {
-    border: solid;
+    border: none;
     padding-top: 10px;
     padding-bottom: 10px;
-    justify-content: center;
-    align-items: center;
+    color: white;
     font-weight: bold;
-    width: 400px;
+    width: 200px;
     margin-bottom: 5px;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 #increment-btn {
-    color: greenyellow;
     background: darkred;
-}
-
-#decrement-btn {
-    color: darkred;
-    background: greenyellow;
 }
 
 #save-btn {
