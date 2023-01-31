@@ -13,3 +13,12 @@ function increment() {
     count = count + 1
     countEl.innerText = count
 }
+
+
+
+function save() {
+    let countAndDash=count+" - ";
+    //document.getElementById("save-el").innerText+=" "+countAndDash;
+    document.getElementById("save-el").textContent+=countAndDash;
+}
+

@@ -13,7 +13,6 @@ h1 {
     font-weight: bold;
     color: darkolivegreen;
     font-size: 80px;
-
 }
 
 .header{
@@ -62,6 +61,11 @@ button {
     background: darkred;
 }
 
+#reset-btn {
+    color: yellow;
+    background: cornflowerblue;
+}
+
 #decrement-btn {
     color: darkred;
     background: greenyellow;
@@ -69,5 +73,22 @@ button {
 
 #save-btn {
     background: darkgreen;
+    margin: 15px;
+    color: aqua;
+}
+
+#text-el{
+    font-size: xx-large;
+    font-weight: bolder;
+    margin: 5%;
+    color: blueviolet;
+    text-align: justify-all;
+}
+
+#save-el{
+    font-size: 50px;
+    font-weight: bold;
+    color: darkblue;
+    text-align: center;
 }
 
