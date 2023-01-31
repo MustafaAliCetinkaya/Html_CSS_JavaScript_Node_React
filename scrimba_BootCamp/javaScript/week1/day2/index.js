@@ -15,7 +15,6 @@ function increment() {
 }
 
 
-
 function save() {
     let countAndDash=count+" - ";
     //document.getElementById("save-el").innerText+=" "+countAndDash;
