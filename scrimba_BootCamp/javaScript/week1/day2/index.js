@@ -4,8 +4,7 @@
 
 // camelCase
 let countEl = document.getElementById("count-el") // pass in arguments
-
-console.log()
+let saveEl = document.getElementById("save-el") // pass in arguments
 
 let count = 0
 
@@ -18,6 +17,8 @@ function increment() {
 function save() {
     let countAndDash=count+" - ";
     //document.getElementById("save-el").innerText+=" "+countAndDash;
-    document.getElementById("save-el").textContent+=countAndDash;
+    saveEl.textContent+=countAndDash;
+    countEl.textContent=0;
+    count=0;
 }
 
