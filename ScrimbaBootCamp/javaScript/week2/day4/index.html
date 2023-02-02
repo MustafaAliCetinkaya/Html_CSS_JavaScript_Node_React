@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.cdnfonts.com/css/cursed-timer-ulil" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Scoreboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container container-flex">
+       <div class="container-wrapper">
+
+          <div class="item-wrapper">
+                <h1>Lakers</h1>
+              <div class="bcg-p">
+                  <p id="count-el">0</p>
+             </div>
+        </div><!-----./ item-wrapper--->
+
+        <div class="btn-wrapper">
+            <button class="btn"  onclick="homeButton1()">+1</button>
+            <button class="btn"  onclick="homeButton2()">+2</button>
+            <button class="btn"  onclick="homeButton3()">+3</button>
+            <button class="reset-btn" id="reset-laker-score">Reset</button>
+        </div>
+
+
+        </div> <!---./ container-wrapper-->
+
+           <div class="container-wrapper">
+            <div class="item-wrapper">
+               <h1>Boston</h1>
+        
+            <div class="bcg-p">
+               <p id="count-el-two">0</p>
+            </div> 
+            </div><!-----./ item-wrapper--->
+
+
+            <div>
+               <button class="btn" onclick="guestButton1()">+1</button>
+               <button class="btn" onclick="guestButton2()">+2</button>
+               <button class="btn" onclick="guestButton3()">+3</button>
+               <button class="reset-btn" id="reset-Boston-score">Reset</button>
+            </div>
+           </div><!-----container-wrapper-->
+    
+       </div> <!----./container--->                                            
+
+      
+    <script src="scripts.js"></script>
+</body>
+</html>
