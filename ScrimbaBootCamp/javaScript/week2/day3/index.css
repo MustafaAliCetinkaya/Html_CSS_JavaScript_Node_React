@@ -6,10 +6,11 @@ body{
     display: flex;
     flex-direction: row;
     flex: 1;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: self-start;
     width: 40%;
-    height: 400px;
+    height: 80%;
     background: #1B244A;
     margin-left: 30%;
     margin-bottom: 5%;
