@@ -2,7 +2,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
     background-image: url("images/table.png");
     background-size: cover;
-    font-weight: bold;
+    font-weight: bolder;
     color: white;
     text-align: center;
 }
@@ -28,7 +28,17 @@ button {
     background: goldenrod;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-weight: bold;
+    font-weight: bolder;
     border: none;
     border-radius: 2px;
+}
+
+.container{
+    width: 30%;
+    height: 60%;
+    border: 4px solid white;
+    border-radius: 20px;
+    margin-left: 35%;
+    margin-top: 5%;
+    background:palevioletred;
 }
