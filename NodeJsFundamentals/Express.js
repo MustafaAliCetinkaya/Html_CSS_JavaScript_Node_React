@@ -17,7 +17,6 @@ app.get("/remove",function (request,response) {
     response.end("Calling which remove the users");
 });
 
-
 var server=app.listen(8888, function () {
     console.log("Sunucu çalışıyor");
 })
