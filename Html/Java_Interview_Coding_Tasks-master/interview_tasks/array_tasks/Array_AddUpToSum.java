@@ -38,7 +38,4 @@ public class Array_AddUpToSum {
 
     }
 
-
-
-
 }
